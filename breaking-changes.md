@@ -238,7 +238,7 @@ Writing an effective use case is key to ensure an alignment between the user, th
 Failing to identify the actual user intention will most likely result in a product that does not provide with a
 sustainable UX and be highly subject to Volatility and breaking changes.
 
-<b> Who, What & Why </b>
+**_Who, What & Why_**
 
 > As I often repeat, answering the 3 questions below is the starting point of a healthier system:
 > - Who ? (The use case's actor)
@@ -255,18 +255,63 @@ status (Why).**
 
 Note that "User" is never a valid answer to the question of "Who".
 
-<b> Business rules </b>
+_**Business rules**_
 
 A user intention usually comes tied with business rules. Listing and detailing them is essential, since they drive the
 very core of the system. The system coherence will be directly affected by how those rules are implemented or not. An
 incoherent system will push the teams to patch it over and over, leading to a more fragile architecture.
 
-#### Adopt a decoupled architecture
+#### Adopt a decoupled architecture (Clean or Hexagonal Architecture)
 
 One of the reasons why contracts often break is a high coupling and low cohesion.
 Translation: the most of important part of your system, and what is most likely to evolve over time is tied to a
 technology (A web framework, an ORM, etc...).
 Consequently, what could have been a simple Variability will become a Volatility.
+
+You can learn more about Clean Architecture in this video: https://www.youtube.com/watch?v=JSmojHSeRSg
+
+#### DDD & EventStorming
+
+**_DDD_**
+
+Domain Driven Design focuses on aligning the Domain (the layer of your system that handles the business logic) with the
+Domain experts configuration and intakes.
+
+In other words, DDD allows to identify groups of Stakeholders in design sections called "Bounded contexts".
+
+Modeling will be driven by those Bounded Contexts, their interactions and interrelationships.
+
+As previously mentioned, alignment between the users and software being a key issue, a system driven by the Domain will
+endure changes over time.
+
+> Since DDD aims to segregate models by Context, it results in lighter models.
+
+> Dealing with less information and behaviors will mechanically minimize the risk of volatility and breaking changes.
+
+You can learn more about DDD here:
+
+- https://2017.dddeurope.com/speakers/eric-evans/
+- https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/
+
+**_EventStorming_**
+
+EventStorming workshops are a way to explore the Domain in Event Driven & Event Sourced architectures (Two different
+patterns).
+
+Business, IT, UX teams will explore a complete business line, by mapping & connecting all the business processes,
+commands, queries and Domain events involved on a timeline driven (and very large) paperboard.
+
+The objective is to help the Bounded Contexts, services and modeling emerge.
+
+You can learn more about EventStorming here:
+
+- https://www.eventstorming.com/
+- https://youtu.be/mLXQIYEwK24
+
+Considering the massiveness of DDD & EventStorming, going into further detail in this article would be pointless, and I
+can only invite you to learn more about it.
+Mastering those approaches requires time and experience, and is not a solution you can implement overnight. It is a long
+term investment that can help make your organization more sustainable overtime.
 
 ## REST Web APIs
 
@@ -274,5 +319,4 @@ Consequently, what could have been a simple Variability will become a Volatility
 
 > <b>Reminder</b>\
 > REST is a software architecture allowing machines to communicate with each other.
-
 
