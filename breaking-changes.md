@@ -228,6 +228,46 @@ that I will address later in this article.
 A way to tackle business complexity and change over time on a larger scale is to implement a Domain Driven Design (AKA
 DDD). EventStorming was actually invented in the context of DDD.
 
+## Preventing breaking changes
+
+### When tackling business software
+
+#### Write an effective use case
+
+Writing an effective use case is key to ensure an alignment between the user, the Domain experts and the software.
+Failing to identify the actual user intention will most likely result in a product that does not provide with a
+sustainable UX and be highly subject to Volatility and breaking changes.
+
+<b> Who, What & Why </b>
+
+> As I often repeat, answering the 3 questions below is the starting point of a healthier system:
+> - Who ? (The use case's actor)
+> - What ? (A clear intent of the "Who")
+> - Why ? (A reason that validates the "What")
+
+Example:
+
+**As a customer (Who), I want to retrieve a list of my orders (What), in order to follow their payment and shipping
+status (Why).**
+
+> Failing to answer one of the questions above is a red flag and something might be off. You might want to challenge the
+> feature.
+
+Note that "User" is never a valid answer to the question of "Who".
+
+<b> Business rules </b>
+
+A user intention usually comes tied with business rules. Listing and detailing them is essential, since they drive the
+very core of the system. The system coherence will be directly affected by how those rules are implemented or not. An
+incoherent system will push the teams to patch it over and over, leading to a more fragile architecture.
+
+#### Adopt a decoupled architecture
+
+One of the reasons why contracts often break is a high coupling and low cohesion.
+Translation: the most of important part of your system, and what is most likely to evolve over time is tied to a
+technology (A web framework, an ORM, etc...).
+Consequently, what could have been a simple Variability will become a Volatility.
+
 ## REST Web APIs
 
 ### Handling breaking changes
